@@ -97,7 +97,7 @@ fun handleItems(items: List<LibraryItem>) {
     println("5. Вернуться к выбору типа объекта")
     when (readlnOrNull()?.toIntOrNull()) {
         1 -> takeHome(selectedItem)
-        2 -> readInBochus(selectedItem)
+        2 -> readInLib(selectedItem)
         3 -> println(selectedItem.getDetailedInfo())
         4 -> returnItem(selectedItem)
         5 -> return
@@ -118,7 +118,7 @@ fun takeHome(item: LibraryItem) {
     println("${item::class.simpleName} ${item.id} взяли домой.")
 }
 
-fun readInBochus(item: LibraryItem) {
+fun readInLib(item: LibraryItem) {
     if (item is Disc) {
         println("Диски нельзя тут читать.")
         return
